@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smartphones</title>
+</head>
+<body>
+<h1>Smartphones</h1>
+
+{% for manufacturer in manufacturer %}
+    <h2>{{ manufacturer.marca }} ({{ manufacturer.country }})</h2>
+    <ul>
+        {% for smartphone in manufacturer.smartphone_set.all %}
+            <li>{{ smartphone.name_smartphone }} - RAM: {{ smartphone.ram }}, Almacenamiento: {{ smartphone.storage }}, Pantalla: {{ smartphone.Screen_size }}</li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+
+</body>
+</html>
